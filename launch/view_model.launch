@@ -11,18 +11,21 @@
         type="robot_state_publisher"
         output="screen"/>
 
-  <node name="joint_state_publisher" 
+  <node unless="$(arg gui)"
+        name="joint_state_publisher" 
         pkg="joint_state_publisher"
         type="joint_state_publisher"
         output="screen">
-    <param name="publish_default_efforts" value="true" />
+    <param name="publish_default_efforts" value="true"/>
   </node>
 
   <node if="$(arg gui)" 
         name="joint_state_publisher_gui"
         pkg="joint_state_publisher_gui"
         type="joint_state_publisher_gui"
-        output="screen"/>
+        output="screen">
+    <param name="publish_default_efforts" value="true"/>
+  </node>
 
   <include file="$(find leo_viz)/launch/rviz.launch">
     <arg name="config" value="model"/>
