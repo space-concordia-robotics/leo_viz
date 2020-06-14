@@ -2,7 +2,7 @@
   <name>leo_viz</name>
   <version>0.1.1</version>
   <description>
-    URDF Description package for Leo Rover
+    Visualization launch files and RViz configurations for Leo Rover
   </description>
 
   <author>Błażej Sowa</author>
