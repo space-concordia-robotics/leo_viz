@@ -28,7 +28,7 @@
   </node>
 
   <include file="$(find leo_viz)/launch/rviz.launch">
-    <arg name="config" value="model"/>
+    <arg name="config" value="robot"/>
   </include>
 
 </launch>
