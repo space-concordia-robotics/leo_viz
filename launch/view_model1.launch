@@ -2,11 +2,14 @@
 
   <arg name="gui" default="true" />
   <arg name="model" default="$(find leo_description)/urdf/leo.urdf.xacro"/>
-  <arg name = "fixed" default = "false"/>
-
+  <arg name="fixed" default="false"/>
+  <arg name="robot_ns" default="/"/>
   <param name="robot_description" 
-         command="$(find xacro)/xacro --inorder $(arg model) "/>
-	 
+         command="$(find xacro)/xacro --inorder $(arg model)
+	 fixed:=$(arg fixed)
+         robot_ns:=$(arg robot_ns) 
+  	 rockers_fixed:=false
+  "/>
 
   <node name="robot_state_publisher"
         pkg="robot_state_publisher"
